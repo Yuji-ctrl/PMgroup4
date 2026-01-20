@@ -23,7 +23,7 @@ AudioPlayer bgmPlayer;
 AudioPlayer sePlayer;
 
 // ★修正: 初回に0が選ばれても大丈夫なように -1 で初期化
-int formers = -1; 
+int lastIndex = -1; 
 int targetIndex;
 
 SurfaceBase[] surfaces = new SurfaceBase[n_img];
@@ -115,11 +115,11 @@ void keyPressed() {
     surfaces[targetIndex].toggleImage();
     
     // 初回(-1)以外なら、前の画像の選択を解除
-    if (formers != -1) {
-      surfaces[formers].toggleImage();
+    if (lastIndex != -1) {
+      surfaces[lastIndex].toggleImage();
     }
     
-    formers = targetIndex;
+    lastIndex = targetIndex;
     break;
 
     // モード切替
@@ -141,7 +141,7 @@ int chooseScreen() {
   int next = int(random(n_img));
   
   // もし前回と同じ値だったら、再帰呼び出しの結果を return する
-  if (next == formers) {
+  if (next == lastIndex) {
     return chooseScreen(); 
   }
   
