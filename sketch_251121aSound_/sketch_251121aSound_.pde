@@ -112,12 +112,15 @@ void keyPressed() {
     
     println("Switching Surface No: " + targetIndex);
     
-    surfaces[targetIndex].toggleImage();
-    
     // 初回(-1)以外なら、前の画像の選択を解除
     if (lastIndex != -1) {
       surfaces[lastIndex].toggleImage();
     }
+    
+    //少しだけ待つ
+    delay(2500);
+
+    surfaces[targetIndex].toggleImage();
     
     lastIndex = targetIndex;
     break;
