@@ -145,7 +145,7 @@ int n_img = 6;  // スクリーン数を変更
 - `s` キーで設定を保存した後、プログラムを終了してください
 
 ## 制作情報
-- **制作**: natsukik06, zhunpingsongben-cmyk, Yuji-ctrl
+- **制作**: natsukik06, zhunpingsongben-cmyk, Yuji-ctrl（モブプロメンター）
 - **最終更新**: 2026年1月
 
 ## ライセンス
